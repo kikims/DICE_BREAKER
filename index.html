@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>DICE BEAKER</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* 背景色 */
+            text-align: center; /* ページ全体を中央揃えに */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .fukidashi {
+            position: relative;
+            width: 480px; /* 横の長さを2倍に */
+            padding: 30px; /* 縦の大きさを2倍に */
+            margin: 20px auto;
+            font-size: 20px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: 0.05em;
+            background-color: #fff;
+            border-radius: 8px;
+            -webkit-filter: drop-shadow(0px 3px 5px rgba(255, 105, 180, 0.6));
+            filter: drop-shadow(0px 3px 5px rgba(255, 105, 180, 0.6));
+            border: 2px solid #1E90FF; /* 青色の境界線 */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; /* 魅力的なフォントに変更 */
+        }
+
+        .fukidashi::before {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -15px;
+            border: 15px solid transparent;
+            border-top-color: #fff;
+            filter: drop-shadow(0px 2px 2px rgba(255, 105, 180, 0.6));
+        }
+
+        .link-box {
+            background-color: #DA70D6; /* 紫色の背景 */
+            border: 1px solid #FF69B4; /* ピンク色の境界線 */
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            margin: auto 20px 20px; /* 下部に配置 */
+            width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 255, 0.5); /* 青色の影 */
+            order: 3; /* Flexboxを使用して最下部に配置 */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px; /* 角を丸くする */
+            color: white;
+            background-image: linear-gradient(45deg, #FF69B4, #1E90FF, #DA70D6); /* ピンク、青、紫のグラデーション */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 影をつける */
+            transition: all 0.3s ease;
+            display: block; /* ブロックレベル要素にする */
+            margin: 20px auto; /* 上下のマージンを指定して左右は自動で中央揃え */
+        }
+
+        button:hover {
+            background-image: linear-gradient(45deg, #DA70D6, #1E90FF, #FF69B4); /* ホバー時にグラデーションの方向を変える */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* 影を大きくする */
+        }
+
+        button:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* クリック時に影を小さくする */
+            transform: translateY(2px); /* クリック時に軽く下に動かす */
+        }
+
+        /* 画面の高さを最大限に利用して、リンクボックスを下部に固定 */
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <div class="fukidashi" id="promptDisplay">ROLL THE DICE TO GET TOPICS</div>
+    <button id="generateButton">ROLL THE DICE</button>
+</div>
+<div class="link-box">
+    <a href="https://cluster.mu/en/w/656edee1-b861-4e47-af5f-fc045b520b79">What is "DICE BREAKER?"</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
