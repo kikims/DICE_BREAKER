@@ -88,18 +88,56 @@
             flex-direction: column;
             justify-content: center;
         }
+
+        .language-selector {
+            margin-top: 20px; /* 言語選択のための余白 */
+        }
+
+        #languageSelect {
+            border: 2px solid #eaeaea;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 120px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            background-color: white;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            border: 1px solid #FF69B4;
+            margin: auto; /* 中央揃え */
+
+        }
+        .language-label {
+            font-family: 'Poppins', sans-serif; /* Poppinsフォントを使用 */
+            font-weight: 600; /* 太字 */
+            font-size: 24px; /* フォントサイズを大きく */
+            color: #FF69B4; /* ピンク色で表示 */
+            margin-bottom: 10px; /* セレクトボックスとの間に余白を追加 */
+        }
+        #languageSelect {
+            /* セレクトボックスのスタイル設定 */
+            margin: auto;
+        }
     </style>
 </head>
 <body>
+  <div class="language-selector">
+      <label for="languageSelect" class="language-label">Language<br></label>
+      <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+      </select>
+  </div>
+  <div class="content">
+      <div class="fukidashi" id="promptDisplay">ROLL THE DICE TO GET TOPICS</div>
+      <button id="generateButton">ROLL THE DICE</button>
 
-<div class="content">
-    <div class="fukidashi" id="promptDisplay">ROLL THE DICE TO GET TOPICS</div>
-    <button id="generateButton">ROLL THE DICE</button>
-</div>
-<div class="link-box">
-    <a href="https://cluster.mu/en/w/656edee1-b861-4e47-af5f-fc045b520b79">What is "DICE BREAKER?"</a>
-</div>
+  </div>
+  <div class="link-box">
+      <a href="https://cluster.mu/en/w/656edee1-b861-4e47-af5f-fc045b520b79">What is "DICE BREAKER?"</a>
+  </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+  <script src="script.js"></script>
+  </body>
+  </html>
