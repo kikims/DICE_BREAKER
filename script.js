@@ -715,30 +715,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     let currentLanguage = 'en'; // 初期言語設定
 
-        const languageToggle = document.getElementById('languageToggle');
-        const generateButton = document.getElementById('generateButton');
-        const promptDisplay = document.getElementById('promptDisplay');
+    const languageToggle = document.getElementById('languageToggle');
+    const generateButton = document.getElementById('generateButton');
+    const promptDisplay = document.getElementById('promptDisplay');
 
 
-            languageSelect.addEventListener('change', () => {
-                // 選択されたオプションの値に基づいて言語を切り替える
-                currentLanguage = languageSelect.value;
-            });
-
-            generateButton.addEventListener('click', () => {
-                let intervalTime = 50;
-                const maxIntervalTime = 300;
-                const intervalIncrease = 25;
-                const selectedPrompts = prompts[currentLanguage];
-
-                const changePrompt = () => {
-                    promptDisplay.textContent = selectedPrompts[Math.floor(Math.random() * selectedPrompts.length)];
-                    if (intervalTime < maxIntervalTime) {
-                        intervalTime += intervalIncrease;
-                        setTimeout(changePrompt, intervalTime);
-                    }
-                };
-
-                setTimeout(changePrompt, intervalTime);
-            });
+        languageSelect.addEventListener('change', () => {
+            // 選択されたオプションの値に基づいて言語を切り替える
+            currentLanguage = languageSelect.value;
         });
+
+        generateButton.addEventListener('click', () => {
+            let intervalTime = 50;
+            const maxIntervalTime = 300;
+            const intervalIncrease = 25;
+            const selectedPrompts = prompts[currentLanguage];
+
+            const changePrompt = () => {
+                promptDisplay.textContent = selectedPrompts[Math.floor(Math.random() * selectedPrompts.length)];
+                if (intervalTime < maxIntervalTime) {
+                    intervalTime += intervalIncrease;
+                    setTimeout(changePrompt, intervalTime);
+                }
+            };
+
+            setTimeout(changePrompt, intervalTime);
+        });
+    });
